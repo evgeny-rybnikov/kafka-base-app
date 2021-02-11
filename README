@@ -1,0 +1,35 @@
+### 201bd training
+### simple Kafka app written in Java for Python developers
+
+
+## Prerequisites
+# java 1.8 installed (https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html recommended)
+# maven installed (https://mkyong.com/maven/how-to-install-maven-in-windows/)
+# HDP 3.0.1 installed in docker
+
+## locally:
+
+# build jar
+maven clean build
+
+# copy jar to HDP
+docker cp target/kafka-base-app-1.0-SNAPSHOT-jar-with-dependencies.jar sandbox-hdp:/home/app/
+
+
+## in HDP:
+
+# set variables
+KAFKA_HOME=/usr/hdp/3.0.1.0-187/kafka
+APP_PATH=/home/app/java-kafka-base-app-1.0-SNAPSHOT-jar-with-dependencies.jar:$KAFKA_HOME/libs/*
+
+## run the ProducerDemo app with your params:
+java -cp $APP_PATH kafka.app.ProducerDemo zz-topic
+
+## run the ConsumeDemo app with your params:
+java -cp $APP_PATH kafka.app.ConsumeDemo zz-topic
+
+## run TopicAnalyzer app with your params:
+java -cp $APP_PATH kafka.app.TopicAnalyzer hotels 5
+
+
+
