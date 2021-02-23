@@ -20,7 +20,7 @@ docker cp target/kafka-base-app-1.0-SNAPSHOT-jar-with-dependencies.jar sandbox-h
 
 # set variables
 KAFKA_HOME=/usr/hdp/3.0.1.0-187/kafka
-APP_PATH=/home/app/java-kafka-base-app-1.0-SNAPSHOT-jar-with-dependencies.jar:$KAFKA_HOME/libs/*
+APP_PATH="/home/app/java-kafka-base-app-1.0-SNAPSHOT-jar-with-dependencies.jar:$KAFKA_HOME/libs/*"
 
 ## run the ProducerDemo app with your params:
 java -cp $APP_PATH kafka.app.ProducerDemo zz-topic
