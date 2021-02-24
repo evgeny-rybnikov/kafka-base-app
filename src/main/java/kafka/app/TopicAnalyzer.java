@@ -69,7 +69,7 @@ public class TopicAnalyzer {
         AtomicInteger logged = new AtomicInteger(0);
 
         kstream.map((key, value) -> {
-            if (logged.incrementAndGet() < limit) analyzeAndReport(key, value);
+            if (logged.incrementAndGet() <= limit) analyzeAndReport(key, value);
             return KeyValue.pair(key, value);
         });
 
