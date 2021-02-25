@@ -27,6 +27,8 @@ public class ConsumerDemo {
         config.put("session.timeout.ms", "10000");
         config.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         config.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        config.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        config.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(config);
