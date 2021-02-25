@@ -32,6 +32,7 @@ java -cp $APP_PATH kafka.app.ConsumeDemo zz-topic
 java -cp $APP_PATH kafka.app.TopicAnalyzer hotels 5
 
 ## Links
+# https://kafka.apache.org/27/documentation/streams/tutorial
 # http://cloudurable.com/blog/kafka-architecture/index.html
 # http://cloudurable.com/blog/kafka-tutorial-kafka-consumer/index.html
 # http://cloudurable.com/blog/kafka-tutorial-kafka-producer/index.html
